@@ -20,8 +20,10 @@ if %errorlevel% equ 0 (
     mvn clean package -Pproduction
 )
 
+REM Cleanup
+del git_pull_output.txt
+
 REM Execute the JAR file
 java -jar target\meditrace-1.0-SNAPSHOT.jar
 
-REM Cleanup
-del git_pull_output.txt
+
